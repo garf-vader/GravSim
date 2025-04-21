@@ -97,7 +97,6 @@ body_names = []
 bodies = []
 
 for object in solar_objects_83:
-    #name, pos, vel = importer("NAME="+object[0])
     if len(object) == 3:
         name, pos, vel = importer(object[2])
     else:
@@ -105,8 +104,8 @@ for object in solar_objects_83:
     body_names.append(object[0])
     bodies.append([object[1], pos[0], pos[1], pos[2], vel[0], vel[1], vel[2]])
 
-np.savetxt("c_codefiles/solar_system_data/names.txt", np.array(body_names), fmt='%s')
-np.savetxt("c_codefiles/solar_system_data/initial_conditions.txt", np.array(bodies))
+np.savetxt("solar_system_data/names.txt", np.array(body_names), fmt='%s')
+np.savetxt("solar_system_data/initial_conditions.txt", np.array(bodies))
 
 # pos and vel entered in km and km/s but converted before saving
 # this is because data is from Horizons system

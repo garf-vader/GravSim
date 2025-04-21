@@ -153,5 +153,3 @@ def thread_graph():
 #plot_3d()
 #plot_2d()
 #thread_graph()
-
-plt.show()

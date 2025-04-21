@@ -18,3 +18,8 @@ It isnt the most intuitive how I got the data I got for the solar system because
 
 
 The data is saved periodically to a file, there is a multiplier used to control this, otherwise the exported txt file will be of the order of a 100+ MB
+
+
+Algorithm Improvements:
+
+	- Pre-calculation of 1/distance and distance^2, thus replacing slower operations (3 divisions, 1 multiplication) with faster operations (3 multiplications, 1 division) for a 25% speedup

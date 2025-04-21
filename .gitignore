@@ -25,6 +25,10 @@ a.out
 /bin/
 /obj/
 
+# Results directories
+/step_data/
+/time_data/
+
 # Editor and IDE files (common)
 *.swp
 *~
