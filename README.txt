@@ -21,5 +21,4 @@ The data is saved periodically to a file, there is a multiplier used to control 
 
 
 Algorithm Improvements:
-
-	- Pre-calculation of 1/distance and distance^2, thus replacing slower operations (3 divisions, 1 multiplication) with faster operations (3 multiplications, 1 division) for a 25% speedup
+  - Pre-calculation of 1/distance and distance^2, thus replacing slower operations (3 divisions, 1 multiplication) with faster operations (3 multiplications, 1 division) for a 25% speedup
