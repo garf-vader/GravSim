@@ -13,7 +13,7 @@
 
 void calculate_accel_openmp(Particle particles[], int num_particles, double G) {
     int i, j;
-    double dx, dy, dz, distance, force_magnitude;
+    double dx, dy, dz, distance_squared, distance_reciprocal, force_magnitude;
 
     #pragma omp parallel for private(i, j, dx, dy, dz, distance, force_magnitude) shared(particles, num_particles) schedule(dynamic)
     for (i = 0; i < num_particles; ++i) {
@@ -29,21 +29,15 @@ void calculate_accel_openmp(Particle particles[], int num_particles, double G) {
                 dy = particles[j].y - particles[i].y;
                 dz = particles[j].z - particles[i].z;
 
-                distance = sqrt((dx * dx) + (dy * dy) + (dz * dz));
+                distance_squared = ((dx * dx) + (dy * dy) + (dz * dz));
+                distance_reciprocal = 1.0 / sqrt(distance_squared);
                 // particle i mass cancels when you calculate accel anyway so it can be left out of equation to save compute time
-                force_magnitude = G * particles[j].mass / (distance * distance);
+                force_magnitude = G * particles[j].mass / (distance_squared);
 
                 // Calculate acceleration components
-                ax_private += force_magnitude * (dx / distance);
-                ay_private += force_magnitude * (dy / distance);
-                az_private += force_magnitude * (dz / distance);
-
-                //#pragma omp atomic // left these lines to show the bad way to handle shared memory, with 0 caching
-                //particles[i].ax += force_magnitude * (dx / distance);
-                //#pragma omp atomic
-                //particles[i].ay += force_magnitude * (dy / distance);
-                //#pragma omp atomic
-                //particles[i].az += force_magnitude * (dz / distance);
+                ax_private += force_magnitude * (dx * distance_reciprocal);
+                ay_private += force_magnitude * (dy * distance_reciprocal);
+                az_private += force_magnitude * (dz * distance_reciprocal);
             }
         }
         // Update values outside j loop, quicker than atomic
