@@ -76,21 +76,6 @@ for n in range(steps):
     positions, velocities, accelerations = evolve(
         positions, velocities, masses, mass_matrix, accelerations, G, dt
     )
-    #pos_history.append(positions)
-    #vel_history.append(velocities)
-
+    
 end = time.perf_counter() - start
 print(f"Speed: {end}")
-
-#total_e_system, ke, gpe = total_energy(masses, pos_history, vel_history, G)
-
-
-#print(f"Time:{(time.perf_counter()-start)/steps}")
-
-#directory = "128_system_test"
-
-#np.save(f"{directory}/pos_history", pos_history)
-#np.save(f"{directory}/vel_history", vel_history)
-#np.save(f"{directory}/total_e_system", total_e_system)
-#np.save(f"{directory}/ke", ke)
-#np.save(f"{directory}/gpe", gpe)
