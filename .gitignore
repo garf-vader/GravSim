@@ -1,1 +1,99 @@
-/.vscode
+# Compiled binary executable for C
+a.out
+*.exe
+
+# Object files for C
+*.o
+*.obj
+
+# Precompiled Headers for C
+*.gch
+
+# Libraries for C
+*.a
+*.so
+*.dylib
+*.lib
+*.dll
+
+# Debug files for C
+*.dSYM/
+*.su
+
+# Build directories for C
+/build/
+/bin/
+/obj/
+
+# Editor and IDE files (common)
+*.swp
+*~
+.\#*
+*.sublime-workspace
+*.sublime-project
+.idea/
+.vscode/
+
+# Operating System files
+.DS_Store
+Thumbs.db
+
+# Python Bytecode files
+*.py[cod]
+__pycache__/
+*.pyo
+*.pyd
+
+# Distribution / Packaging for Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual Environment directories
+.env/
+.venv/
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# PyInstaller
+# Usually these file/folders are generated from running PyInstaller
+# and contain code that is not needed in version control.
+*.manifest
+*.spec
+
+# Unit test / coverage reports for Python
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+.pytest_cache/
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints
+
+# PyCharm
+.idea/
+
+# VS Code
+.vscode/
