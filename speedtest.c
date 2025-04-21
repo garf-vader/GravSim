@@ -27,7 +27,7 @@ int main() {
     int steps = 1000;
     double G = 1;
 
-    char filename[] = "tab1024.txt";
+    char filename[] = "datasets/tab1024.txt";
     int N_vals[16] = {64, 128, 192, 256, 320, 384, 448, 512, 576, 640, 704, 768, 832, 896, 960, 1024};
 
     FILE* serial_results = fopen("time_data/serial_bigO.txt", "w");
