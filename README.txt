@@ -1,24 +1,48 @@
-The Python files are various Data Analysis, Visualisation, and QoL features. 
-They require an environment that may be initialised using requirements.txt.
+## Project Notes
 
-Plotter.py is commented out, as I didnt directly save the output plots to files, I saved from the UI
+This project includes a mix of data analysis, visualization tools, and performance-oriented simulations in both Python and C.
 
-speedtest.sh might work but I never got access to an HPC for this specific project
+### 🐍 Python Scripts
 
+The Python files offer various utilities for:
 
-How to build the C code:
+- Data Analysis
+- Visualization
+- Quality-of-Life Enhancements
 
-	There are 3 makefiles
-	use "make -f solar.mk" and "make -f speed.mk" to create the solar and speedtest executable
-	do not run makefile.mk, it is for HPC but I never ran this specific code on one
-	
-	You will need the gcc compiler on your system
+These scripts require a virtual environment initialized with the `requirements.txt` file.
 
-It isnt the most intuitive how I got the data I got for the solar system because I just fiddled around a bit with variables, some gravity datasets are also available.
+Note:
+The `plotter.py` script is currently commented out. While it was used to generate visualizations, the plots were saved manually from the UI rather than being written to files programmatically.
 
+### 🚀 C Simulation Code
 
-The data is saved periodically to a file, there is a multiplier used to control this, otherwise the exported txt file will be of the order of a 100+ MB
+The C code is focused on numerical simulations (e.g., planetary motion) and includes specific performance enhancements.
 
+#### Building the Code
 
-Algorithm Improvements:
-  - Pre-calculation of 1/distance and distance^2, thus replacing slower operations (3 divisions, 1 multiplication) with faster operations (3 multiplications, 1 division) for a 25% speedup
+Three Makefiles are included:
+
+- `make -f solar.mk`: Compiles the solar simulation executable.
+- `make -f speed.mk`: Compiles the speedtest benchmarking tool.
+- `make -f makefile.mk`: Intended for HPC use but has not been tested in this context.
+
+⚠️ You will need the GCC compiler installed on your system to build the executables.
+
+#### Speed Considerations
+
+- The `speedtest.sh` script was meant for testing on HPC systems but was never fully deployed due to lack of access.
+- Periodic data exports can result in large files (100+ MB). A multiplier is used to control the save frequency and mitigate this.
+
+#### Performance Optimizations
+
+- Distance Calculations Optimized:
+  By pre-calculating `1/distance` and `distance²`, the algorithm avoids repeated divisions.
+  This results in a:
+    - Reduction from 3 divisions + 1 multiplication
+    - To 3 multiplications + 1 division
+  Achieving up to 25% speedup in simulation performance.
+
+### 🔬 Data Sources & Setup
+
+Some gravity datasets were used during experimentation, but the exact methodology was exploratory and iterative—variables were adjusted through trial and error to produce meaningful solar system simulations.
