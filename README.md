@@ -1,20 +1,20 @@
 # Gravity Simulator (GravSim)
 ## Project Notes
 
-This project includes a mix of data analysis, visualization tools, and performance-oriented simulations in both Python and C.
+This project includes a mix of data analysis, visualisation tools, and performance-oriented simulations in both Python and C.
 
 ### 🐍 Python Scripts
 
 The Python files offer various utilities for:
 
 - Data Analysis
-- Visualization
+- Visualisation
 - Quality-of-Life Enhancements
 
-These scripts require a virtual environment initialized with the `requirements.txt` file.
+These scripts require a virtual environment initialised with the `requirements.txt` file.
 
 Note:
-The `plotter.py` script is currently commented out. While it was used to generate visualizations, the plots were saved manually from the UI rather than being written to files programmatically.
+The `plotter.py` script is currently commented out. While it was used to generate visualisations, the plots were saved manually from the UI rather than being written to files programmatically, I intend to change them to automatically write to pdf files.
 
 ### 🚀 C Simulation Code
 
@@ -46,4 +46,4 @@ Three Makefiles are included:
 
 ### 🔬 Data Sources & Setup
 
-Some gravity datasets were used during experimentation, but the exact methodology was exploratory and iterative—variables were adjusted through trial and error to produce meaningful solar system simulations.
+Some gravity datasets were used during experimentation, but the exact methodology was variable and data were adjusted through trial and error to produce meaningful solar system simulations.
