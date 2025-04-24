@@ -1,3 +1,4 @@
+# Gravity Simulator (GravSim)
 ## Project Notes
 
 This project includes a mix of data analysis, visualization tools, and performance-oriented simulations in both Python and C.
